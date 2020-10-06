@@ -1,0 +1,82 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "texto_java.txt",
+      "provenance": [],
+      "authorship_tag": "ABX9TyN41s+7HYYxgpCUar/wO754",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/LuisCastillo920809/daa_2021_1/blob/master/texto_java.txt\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mzrpwZ5TiM3t"
+      },
+      "source": [
+        "/*\n",
+        " * To change this license header, choose License Headers in Project Properties.\n",
+        " * To change this template file, choose Tools | Templates\n",
+        " * and open the template in the editor.\n",
+        " */\n",
+        "package lienzoarbol;\n",
+        "\n",
+        "import javax.swing.JFrame;\n",
+        "import logica.Arbol;\n",
+        "\n",
+        "/**\n",
+        " *\n",
+        " * @author daniel\n",
+        " */\n",
+        "public class LienzoArbol {\n",
+        "\n",
+        "    /**\n",
+        "     * @param args the command line arguments\n",
+        "     */\n",
+        "    public static void main(String[] args) {\n",
+        "        // TODO code application logic here\n",
+        "        //= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n",
+        "        //PATRON MVC\n",
+        "        Arbol objArbol = new Arbol(); //MODELO\n",
+        "        Lienzo objLienzo = new Lienzo(); //VISTA\n",
+        "        Controlador objControlador = new Controlador(objLienzo, objArbol); //CONTROLADOR\n",
+        "        //= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n",
+        "        //INSERTAR Y PINTAR ARBOL\n",
+        "        objArbol.insertar(7);\n",
+        "        objArbol.insertar(2);\n",
+        "        objArbol.insertar(9);\n",
+        "        objArbol.insertar(5);\n",
+        "        objArbol.insertar(0);\n",
+        "        objArbol.insertar(10);\n",
+        "        objControlador.iniciar();\n",
+        "        //= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n",
+        "        //MOSTRAR LIENZO EN UNA VENTANA TODO\n",
+        "        JFrame ventana = new JFrame();\n",
+        "        ventana.getContentPane().add(objLienzo);\n",
+        "        ventana.setDefaultCloseOperation(3);\n",
+        "        ventana.setSize(600, 600);\n",
+        "        ventana.setVisible(true);\n",
+        "        //= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n",
+        "    }\n",
+        "    \n",
+        "}"
+      ]
+    }
+  ]
+}
